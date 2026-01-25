@@ -1,0 +1,122 @@
+/* Importando uma fonte moderna */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #009749; /* O roxo da Nicepay */
+    --primary-hover: #00e46e;
+    --bg-color: #f8f9fd;
+    --text-main: #1e1e2d;
+    --text-muted: #7e8199;
+    --card-bg: #ffffff;
+    --input-bg: #f4f4f9;
+    --shadow: 0 10px 30px rgba(124, 93, 250, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: var(--text-main);
+}
+
+.password-container {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-main);
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input {
+    width: 100%;
+    padding: 1.2rem 1rem;
+    background-color: var(--input-bg);
+    border: 2px solid transparent;
+    border-radius: 16px;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    outline: none;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.input:focus {
+    border-color: var(--primary-color);
+    background-color: #fff;
+}
+
+.fa-copy {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.fa-copy:hover {
+    color: var(--primary-color);
+}
+
+.btn {
+    width: 100%;
+    padding: 1.1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+    box-shadow: 0 4px 15px rgba(124, 93, 250, 0.3);
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Estilo do Alerta */
+.alert-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem 2rem;
+    background: #333;
+    color: white;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: none; /* Ativar via JS */
+}
