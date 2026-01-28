@@ -8,6 +8,8 @@
 // rasteio do botão na tela:
 const button = document.getElementById('btn');
 const caixaDeTexto = document.getElementById('input');
+const iconeCopiar = document.querySelector('.fa-copy');
+const alerta = document.getElementById('alert-container')
 
 
 // Arrays com todos os caracteres:
@@ -30,8 +32,7 @@ const geradorDeSenhas = () => {
     senha.push(numero[geradorDeIndex(0, 9)])
     senha.push(caracteresEspeciais[geradorDeIndex(0, caracteresEspeciais.length)])
   }
-  senha = senha.sort()
-  senha = senha.join('')
+  senha = senha.sort(() => Math.random() - 0.5).join('')
   // console.log(senha)
   caixaDeTexto.value = senha;
   return senha;
@@ -39,7 +40,11 @@ const geradorDeSenhas = () => {
 
 //  Função que copia o texto:
 const copyText = () => {
-  caixaDeTexto.value
-}
+  if (caixaDeTexto.value === "") return;
+  
+  navigator.clipboard.writeText(caixaDeTexto.value);
+  alerta.innerHTML("Senha copiada!");
+};
 
+iconeCopiar.addEventListener('click', copyText);
 button.addEventListener('click', geradorDeSenhas)
